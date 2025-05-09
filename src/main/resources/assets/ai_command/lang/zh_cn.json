@@ -1,0 +1,13 @@
+{
+  "text.autoconfig.ai_command.title": "ai 指令",
+  "text.autoconfig.ai_command.category.general": "通用",
+  "text.autoconfig.ai_command.option.system_prompt": "提示词",
+  "text.autoconfig.ai_command.option.max_tokens": "最多单词数",
+  "text.autoconfig.ai_command.option.temperature": "温度",
+  "text.autoconfig.ai_command.option.blacklist": "指令黑名单",
+  "text.ai_command.message.blacklist": "屏蔽 ai 指令响应！",
+  "text.ai_command.message.cleared": "ai 指令历史记录已清除！",
+  "text.ai_command.message.response": "执行 ai 指令：%s",
+  "text.ai_command.message.waiting": "请等待 ai 指令响应完成...",
+  "text.ai_command.message.exception": "ai 指令异常：%s"
+}

@@ -1,0 +1,17 @@
+{
+  "text.autoconfig.ai_command.title": "ai command",
+  "text.autoconfig.ai_command.category.general": "general",
+  "text.autoconfig.ai_command.category.api": "api",
+  "text.autoconfig.ai_command.option.base_url": "url",
+  "text.autoconfig.ai_command.option.api_key": "key",
+  "text.autoconfig.ai_command.option.model": "model",
+  "text.autoconfig.ai_command.option.system_prompt": "prompt",
+  "text.autoconfig.ai_command.option.max_tokens": "max tokens",
+  "text.autoconfig.ai_command.option.temperature": "temperature",
+  "text.autoconfig.ai_command.option.blacklist": "command blacklist",
+  "text.ai_command.message.blacklist": "block ai command response!",
+  "text.ai_command.message.cleared": "ai command history cleared!",
+  "text.ai_command.message.response": "execute ai command: %s",
+  "text.ai_command.message.waiting": "please wait for the ai command response to complete...",
+  "text.ai_command.message.exception": "ai command exception: %s"
+}
