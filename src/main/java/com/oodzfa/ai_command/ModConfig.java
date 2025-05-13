@@ -3,7 +3,10 @@ package com.oodzfa.ai_command;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 
+@Environment(EnvType.CLIENT)
 @Config(name = Main.MOD_ID)
 public class ModConfig implements ConfigData {
     @ConfigEntry.Category("general")

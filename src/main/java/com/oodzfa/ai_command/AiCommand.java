@@ -7,12 +7,16 @@ import com.openai.client.okhttp.OpenAIOkHttpClient;
 import com.openai.models.chat.completions.ChatCompletion;
 import com.openai.models.chat.completions.ChatCompletionCreateParams;
 import me.shedaniel.autoconfig.AutoConfig;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.text.Text;
 
 import java.util.concurrent.CompletableFuture;
 
+@Environment(EnvType.CLIENT)
 public final class AiCommand {
     private static final ModConfig config = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
     private static ChatCompletionCreateParams.Builder paramsBuilder = null;
@@ -57,9 +61,11 @@ public final class AiCommand {
                                                 return;
                                             }
                                         }
-                                        Main.LOGGER.info("ai command response: {}", response.replaceAll("\n", "\\n"));
-                                        context.getSource().sendMessage(Text.translatable("text.ai_command.message.response", response));
-                                        context.getSource().getServer().getCommandManager().executeWithPrefix(context.getSource(), response);
+                                        MinecraftClient.getInstance().execute(() -> {
+                                            MinecraftClient.getInstance().setScreen(
+                                                    new OKScreen(response, context)
+                                            );
+                                        });
                                     } catch (Exception e) {
                                         context.getSource().sendError(Text.translatable("text.ai_command.message.exception", e.getMessage()));
                                         e.printStackTrace();
