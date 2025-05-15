@@ -31,7 +31,6 @@ public class OKScreen extends Screen {
                 .build();
         button2 = ButtonWidget.builder(Text.translatable("text.ai_command.screen.ok"), button -> {
                     context.getSource().getServer().getCommandManager().executeWithPrefix(context.getSource(), response);
-                    Main.LOGGER.info("ai command execute: {}", response.replaceAll("\n", "\n"));
                     this.close();
                 })
                 .dimensions(width / 2 + 5, 20, 200, 20)
@@ -43,8 +42,9 @@ public class OKScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        context.fill(0, 0, width, height, 0x80000000);
         super.render(context, mouseX, mouseY, delta);
         final MultilineText multilineText = MultilineText.create(textRenderer, Text.translatable("text.ai_command.screen.confirm.message", response), width - 20);
-        multilineText.drawWithShadow(context, 10, height / 2, 16, 0xffffff);
+        multilineText.drawWithShadow(context, 10, height / 4, 16, 0xffffff);
     }
 }

@@ -23,8 +23,7 @@ public final class AiCommand {
     private static Boolean completed = true;
 
     public static void clear_history() {
-        paramsBuilder = ChatCompletionCreateParams.builder().addSystemMessage(config.system_prompt);
-        Main.LOGGER.info("ai command history cleared!");
+        paramsBuilder = ChatCompletionCreateParams.builder().addSystemMessage(config.prompt);
     }
 
     public static void register() {
@@ -43,7 +42,6 @@ public final class AiCommand {
                                     return Command.SINGLE_SUCCESS;
                                 }
                                 completed = false;
-                                Main.LOGGER.info("user input: {}", StringArgumentType.getString(context, "message"));
                                 paramsBuilder.model(config.model);
                                 paramsBuilder.maxCompletionTokens(config.max_tokens);
                                 paramsBuilder.temperature(config.temperature);
@@ -56,7 +54,6 @@ public final class AiCommand {
                                         String response = chatCompletion.choices().get(0).message().content().orElse("error!");
                                         for (String keyword : config.blacklist) {
                                             if (response.contains(keyword)) {
-                                                Main.LOGGER.error("block ai command response!");
                                                 context.getSource().sendError(Text.translatable("text.ai_command.message.blacklist"));
                                                 return;
                                             }

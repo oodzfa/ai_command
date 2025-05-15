@@ -5,7 +5,7 @@
   "text.autoconfig.ai_command.option.base_url": "url",
   "text.autoconfig.ai_command.option.api_key": "key",
   "text.autoconfig.ai_command.option.model": "model",
-  "text.autoconfig.ai_command.option.system_prompt": "prompt",
+  "text.autoconfig.ai_command.option.prompt": "prompt",
   "text.autoconfig.ai_command.option.max_tokens": "max tokens",
   "text.autoconfig.ai_command.option.temperature": "temperature",
   "text.autoconfig.ai_command.option.blacklist": "command blacklist",

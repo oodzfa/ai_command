@@ -1,7 +1,11 @@
 {
   "text.autoconfig.ai_command.title": "ai 指令",
   "text.autoconfig.ai_command.category.general": "通用",
-  "text.autoconfig.ai_command.option.system_prompt": "提示词",
+  "text.autoconfig.ai_command.category.api": "接口",
+  "text.autoconfig.ai_command.option.base_url": "地址",
+  "text.autoconfig.ai_command.option.api_key": "密钥",
+  "text.autoconfig.ai_command.option.model": "模型",
+  "text.autoconfig.ai_command.option.prompt": "提示词",
   "text.autoconfig.ai_command.option.max_tokens": "最多单词数",
   "text.autoconfig.ai_command.option.temperature": "温度",
   "text.autoconfig.ai_command.option.blacklist": "指令黑名单",
