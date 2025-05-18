@@ -9,6 +9,9 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.oodzfa.ai_command.command.AiCommand;
+import com.oodzfa.ai_command.config.ModConfig;
+
 @Environment(EnvType.CLIENT)
 public class Main implements ModInitializer {
     public static final String MOD_ID = "ai_command";
