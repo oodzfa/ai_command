@@ -27,13 +27,13 @@ public class OKScreen extends Screen {
     @Override
     protected void init() {
         button1 = ButtonWidget.builder(Text.translatable("text.ai_command.screen.cancel"), button -> this.close())
-                .dimensions(width / 2 - 205, 20, 200, 20)
+                .dimensions(width / 2 - 105, height - 30, 100, 20)
                 .build();
-        button2 = ButtonWidget.builder(Text.translatable("text.ai_command.screen.ok"), button -> {
-            context.getSource().getServer().getCommandManager().executeWithPrefix(context.getSource(), response);
-            this.close();
-        })
-                .dimensions(width / 2 + 5, 20, 200, 20)
+        button2 = ButtonWidget.builder(Text.translatable("text.ai_command.screen.execute"), button -> {
+                    context.getSource().getServer().getCommandManager().executeWithPrefix(context.getSource(), response);
+                    this.close();
+                })
+                .dimensions(width / 2 + 5, height - 30, 100, 20)
                 .build();
 
         addDrawableChild(button1);
@@ -45,7 +45,7 @@ public class OKScreen extends Screen {
         context.fill(0, 0, width, height, 0x80000000);
         super.render(context, mouseX, mouseY, delta);
         final MultilineText multilineText = MultilineText.create(textRenderer,
-                Text.translatable("text.ai_command.screen.confirm.message", response), width - 20);
-        multilineText.drawWithShadow(context, 10, height / 4, 16, 0xffffff);
+                Text.literal(response), width - 20);
+        multilineText.drawWithShadow(context, 10, height / 2 - 10, 9, 0xffffff);
     }
 }

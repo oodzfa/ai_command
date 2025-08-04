@@ -12,7 +12,7 @@ import net.fabricmc.api.Environment;
 @Config(name = Main.MOD_ID)
 public class ModConfig implements ConfigData {
     @ConfigEntry.Category("general")
-    public String prompt = "从现在开始，你将作为一个 Minecraft 指令助手。你将提供准确的 Minecraft 1.20 单行指令，并且不包含任何解释。";
+    public String prompt = "从现在开始，你将作为一个 Minecraft 指令助手。你将提供准确的 Minecraft 1.21 单行指令，并且不包含任何解释。";
     @ConfigEntry.Category("general")
     public Long max_tokens = 1024L;
     @ConfigEntry.Category("general")
